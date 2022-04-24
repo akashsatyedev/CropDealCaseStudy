@@ -1,0 +1,9 @@
+package com.Dealer.Repo;
+
+import org.springframework.data.repository.CrudRepository;
+
+import com.Dealer.model.Dealer;
+
+public interface DealerRespository extends CrudRepository<Dealer ,String>{
+
+}

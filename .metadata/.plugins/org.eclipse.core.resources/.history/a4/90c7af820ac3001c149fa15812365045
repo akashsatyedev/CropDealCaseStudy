@@ -1,0 +1,18 @@
+package com.Dealer.service;
+
+import java.util.UUID;
+
+import com.Dealer.Dto.DealerDto;
+
+public class DealerServiceImpl  implements DealerService{
+	@Override
+	public DealerDto CreateDealer(DealerDto dealerDetails) {
+		dealerDetails.setId(UUID.randomUUID().toString());
+		
+		
+
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

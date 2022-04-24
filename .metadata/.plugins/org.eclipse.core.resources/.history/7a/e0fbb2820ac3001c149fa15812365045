@@ -1,0 +1,7 @@
+package com.Dealer.service;
+
+import com.Dealer.Dto.DealerDto;
+
+public interface DealerService {
+DealerDto CreateDealer(DealerDto dealerDetails);
+}

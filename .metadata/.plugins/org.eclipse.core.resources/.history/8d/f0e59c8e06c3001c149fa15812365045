@@ -1,0 +1,5 @@
+package com.Dealer.service;
+
+public interface DealerService {
+DealerDto CreateDealer(DealerDto dealerDeatils);
+}

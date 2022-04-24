@@ -1,0 +1,7 @@
+server.port=8084
+
+spring.application.name=crop-service
+
+spring.data.mongodb.uri=mongodb+srv://admin-akash:akash1155@cluster0.fq6ov.mongodb.net/CropService
+
+spring.zipkin.base-url:

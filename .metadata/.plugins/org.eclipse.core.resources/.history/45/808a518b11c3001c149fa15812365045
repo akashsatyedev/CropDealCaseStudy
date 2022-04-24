@@ -1,0 +1,34 @@
+package com.Dealer.service;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.Dealer.Repo.DealerRespository;
+import com.Dealer.model.Dealer;
+
+@Service
+public class DealerService {
+    @Autowired
+	public DealerRespository DealerRepo;
+	public List<Dealer> getAllDealers()
+	{
+		List<Dealer> dealers = new ArrayList<>();
+		DealerRepo.findAll().forEach(dealers::add);
+		return dealers;
+	}
+	public void adddealer(Dealer dealer) {
+		// TODO Auto-generated method stub
+		DealerRepo.save(dealer);
+	}
+	
+	public void updatedealer(String id, Dealer dealer) {
+		DealerRepo.save(dealer);//Save can be use to add or update
+		// TODO Auto-generated method stub
+		
+	}
+	
+	}
+

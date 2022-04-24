@@ -1,0 +1,5 @@
+package com.Dealer.repository;
+
+public class UserRepository {
+
+}

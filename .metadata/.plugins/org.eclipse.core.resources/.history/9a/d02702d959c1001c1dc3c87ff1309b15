@@ -1,0 +1,30 @@
+package com.cropdeal.CropService.model;
+
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
+@Document(collection = "Crop")
+public class Crop {
+
+	@Id
+	private String id;
+	private String crop_name;
+	private String crop_type;
+	private String crop_quantity;
+	private String uploaded_by;
+	private String price;
+
+	
+	public Crop(String id, String crop_name, String crop_type, String crop_quantity,
+			com.cropdeal.CropService.model.location location, String uploaded_by, String price) {
+		super();
+		this.id = id;
+		this.crop_name = crop_name;
+		this.crop_type = crop_type;
+		this.crop_quantity = crop_quantity;
+		this.location = location;
+		this.uploaded_by = uploaded_by;
+		this.price=price;
+	}
+
+}

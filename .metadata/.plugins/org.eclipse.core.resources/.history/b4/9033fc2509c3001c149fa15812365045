@@ -1,0 +1,12 @@
+package com.Dealer.DealerEntity;
+
+import java.io.Serializable;
+
+public class DealerEntity implements Serializable{
+
+
+	private static final long serialVersionUID = 3532195552608851856L;
+
+
+
+}

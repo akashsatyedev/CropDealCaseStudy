@@ -1,0 +1,57 @@
+package com.cropdeal.CropService.Controller;
+import java.util.List;
+import java.util.Optional;
+
+import org.hibernate.validator.internal.util.logging.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.cropdeal.CropService.model.*;
+import com.cropdeal.CropService.repository.CropRepository;
+import com.mongodb.diagnostics.logging.Logger;
+
+
+
+	@RestController
+	@RequestMapping("/Crop")
+	public class CropController {
+     
+	@Autowired
+	CropRepository repo;
+	
+	@PostMapping("/findcrop")
+	public String addcrop(@RequestBody Crop crop) {
+		repo.save(crop);
+		return "Added crop with id " + crop.getId();
+	}
+
+	@GetMapping("/findcrop")
+	public List<Crop> getcrop() {
+		return repo.findAll();
+	}
+
+	@GetMapping("/findcrop/{id}")
+	public Optional<Crop> getcrop(@PathVariable String id) {
+		return repo.findById(id);
+	}
+	@PutMapping("/findcrop/{id}")
+	public Crop updateCrop(@RequestBody Crop crop, @PathVariable("id") String id) {
+		//farmercustom.updateFarmer(id, crop);
+         return repo.save(crop);
+		
+	}
+
+	@DeleteMapping("/findcrop/{id}")
+	public String deletecrop(@PathVariable String id) {
+		repo.deleteById(id);
+		return "crop deleted havin id " + id;
+	}
+	}
+

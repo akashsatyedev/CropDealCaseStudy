@@ -1,0 +1,5 @@
+package com.cropdeal.CropService.model;
+
+public class location {
+
+}

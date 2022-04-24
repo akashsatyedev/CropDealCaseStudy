@@ -1,0 +1,8 @@
+server.port=8084
+
+spring.application.name=crop-service
+spring.data.mongodb.uri=mongodb+srv://admin-akash:akash1155@cluster0.fq6ov.mongodb.net/CropsService
+
+spring.zipkin.base-url=http://localhost:9411
+spring.ziplin.sender.type=web
+spring.slueth.sampler.probabilty=1

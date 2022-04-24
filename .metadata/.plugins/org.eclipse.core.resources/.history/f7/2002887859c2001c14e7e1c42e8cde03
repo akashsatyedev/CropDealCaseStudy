@@ -1,0 +1,55 @@
+package com.cropdeal.CropService.Controller;
+import java.util.List;
+
+import org.hibernate.validator.internal.util.logging.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Bean;
+import org.springframework.http.HttpMethod;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.client.RestTemplate;
+import com.cropdeal.CropService.model.*;
+import com.cropdeal.CropService.repository.CropRepository;
+import com.mongodb.diagnostics.logging.Logger;
+
+
+
+	@RestController
+	@RequestMapping("/Crop")
+	public class CropController {
+		private final Logger LOG = LoggerFactory.getLogger(this.getClass());
+	@Autowired
+	CropRepository repo;
+	
+	@PostMapping("/saveProfile")
+	public void saveProfile(@RequestBody Crop crop)
+	{
+		repo.insert(crop);
+	}
+	@GetMapping("/getcrops")
+	
+	public List<Crop> getAllCrops()
+	{
+		return repo.findAll();
+		
+	}
+	@GetMapping(value = "/microservice1")
+	public String method1() {
+		LOG.info("Inside method1");
+		String baseUrl = "http://localhost:8081/microservice2";
+		String response = (String) restTemplate.exchange(baseUrl, HttpMethod.GET, null, String.class).getBody();
+		LOG.info("The response received by method1 is " + response);
+		return response;
+	}
+	}
+

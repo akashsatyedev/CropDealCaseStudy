@@ -1,0 +1,23 @@
+package com.Dealer.service;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.Dealer.Repo.DealerRespository;
+import com.Dealer.model.Dealer;
+
+@Service
+public class DealerService {
+    @Autowired
+	public DealerRespository DealerRepo;
+	public List<Dealer> getAllDealers()
+	{
+		List<Dealer> dealers = new ArrayList<>();
+		DealerRepo.findAll().forEach(dealers::add);
+		return dealers;
+	}
+	}
+

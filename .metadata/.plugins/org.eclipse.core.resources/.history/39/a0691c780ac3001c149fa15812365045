@@ -1,0 +1,68 @@
+package com.Dealer.DealerEntity;
+
+import java.io.Serializable;
+
+public class DealerEntity implements Serializable{
+
+
+	private static final long serialVersionUID = 3532195552608851856L;
+   public long getDealer_id() {
+		return Dealer_id;
+	}
+	public void setDealer_id(long dealer_id) {
+		Dealer_id = dealer_id;
+	}
+	public String getId() {
+		return id;
+	}
+	public void setId(String id) {
+		this.id = id;
+	}
+	public String getDealer_name() {
+		return dealer_name;
+	}
+	public void setDealer_name(String dealer_name) {
+		this.dealer_name = dealer_name;
+	}
+	public String getDealer_email() {
+		return dealer_email;
+	}
+	public void setDealer_email(String dealer_email) {
+		this.dealer_email = dealer_email;
+	}
+	public String getDealer_contactNo() {
+		return dealer_contactNo;
+	}
+	public void setDealer_contactNo(String dealer_contactNo) {
+		this.dealer_contactNo = dealer_contactNo;
+	}
+	public String getPassword() {
+		return password;
+	}
+	public void setPassword(String password) {
+		this.password = password;
+	}
+	public String getDealerId() {
+		return dealerId;
+	}
+	public void setDealerId(String dealerId) {
+		this.dealerId = dealerId;
+	}
+	public String getEncryptedPassword() {
+		return encryptedPassword;
+	}
+	public void setEncryptedPassword(String encryptedPassword) {
+		this.encryptedPassword = encryptedPassword;
+	}
+private long Dealer_id;
+	private String id;
+	private String dealer_name;
+	private String dealer_email;
+	private String dealer_contactNo;
+	private String password;
+	private String dealerId;
+	
+	private String encryptedPassword;
+	
+
+}

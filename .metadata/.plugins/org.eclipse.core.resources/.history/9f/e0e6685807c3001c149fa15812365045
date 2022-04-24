@@ -1,0 +1,12 @@
+package com.Dealer.service;
+
+import com.Dealer.Dto.DealerDto;
+
+public class DealerServiceImpl  implements DealerService{
+	@Override
+	public DealerDto CreateDealer(DealerDto dealerDeatils) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

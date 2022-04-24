@@ -1,0 +1,5 @@
+package com.Dealer.Dto;
+
+public class DealerDto {
+
+}

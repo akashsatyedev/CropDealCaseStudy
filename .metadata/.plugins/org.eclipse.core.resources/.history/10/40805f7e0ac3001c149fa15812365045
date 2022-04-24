@@ -1,0 +1,55 @@
+package com.Dealer.model;
+
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
+public class Dealer {
+	
+	
+	private String id;
+	public String getId() {
+		return id;
+	}
+	public void setId(String id) {
+		this.id = id;
+	}
+	public String getDealer_name() {
+		return dealer_name;
+	}
+	public void setDealer_name(String dealer_name) {
+		this.dealer_name = dealer_name;
+	}
+	public String getDealer_email() {
+		return dealer_email;
+	}
+	public void setDealer_email(String dealer_email) {
+		this.dealer_email = dealer_email;
+	}
+	public String getDealer_contactNo() {
+		return dealer_contactNo;
+	}
+	public void setDealer_contactNo(String dealer_contactNo) {
+		this.dealer_contactNo = dealer_contactNo;
+	}
+	public String getPassword() {
+		return password;
+	}
+	public void setPassword(String password) {
+		this.password = password;
+	}
+	@NotNull(message="Name Cannot be Null")
+	@Size(min=2,message="Name Cannot be null")
+	private String dealer_name;
+	@NotNull(message="Email cannot be Null")
+	@Email
+	private String dealer_email;
+	@NotNull(message="Number Cannot be Null")
+	@Size(max=10,message="Invalid No please Check")
+	private String dealer_contactNo;
+	@NotNull(message="Password Cannot be null")
+	@Size(min=8,max=16,message="Greater than 8 and smallr than 16")
+	private String password;
+	
+//	private Dealer_Subcribed_Crop dealer_Subscribed_Crop;
+}

@@ -1,0 +1,10 @@
+package com.Dealer.service;
+
+public class DealerServiceImpl  implements DealerService{
+	@Override
+	public DealerDto createDealer(DealerDto dealerDetails)
+	{
+		return null;
+	}
+
+}
